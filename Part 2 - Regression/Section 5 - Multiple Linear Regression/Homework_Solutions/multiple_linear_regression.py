@@ -43,24 +43,6 @@ y_pred = regressor.predict(X_test)
 # Building the optimal model using Backward Elimination
 # Ou simplesmente qual variavel(is) realmente importa (p < 0.5)
 import statsmodels.formula.api as sm
-"""
-X = np.append(arr = np.ones((50, 1)).astype(int), values = X, axis = 1)
-X_opt = X[:, [0, 1, 2, 3, 4, 5]]
-regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
-regressor_OLS.summary()
-X_opt = X[:, [0, 1, 3, 4, 5]]
-regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
-regressor_OLS.summary()
-X_opt = X[:, [0, 3, 4, 5]]
-regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
-regressor_OLS.summary()
-X_opt = X[:, [0, 3, 5]]
-regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
-regressor_OLS.summary()
-X_opt = X[:, [0, 3]]
-regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
-regressor_OLS.summary()
-"""
 
 def backwardElimination(x, sl):
     numVars = len(x[0])
@@ -71,7 +53,7 @@ def backwardElimination(x, sl):
             for j in range(0, numVars - i):
                 if (regressor_OLS.pvalues[j].astype(float) == maxVar):
                     x = np.delete(x, j, 1)
-    regressor_OLS.summary()
+    #regressor_OLS.summary()
     return x
  
 SL = 0.05

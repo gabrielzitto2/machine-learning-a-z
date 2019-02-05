@@ -1,5 +1,5 @@
 # Simple Linear Regression
-
+# y = b0 + b1.x
 # Importing the libraries
 import numpy as np
 import matplotlib.pyplot as plt
